@@ -4,11 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += widgets
+QT      += widgets
 TEMPLATE = lib
-CONFIG += plugin
-VERSION = 0.0.1
-TARGET = $$qtLibraryTarget(gear)
+CONFIG  += plugin
+VERSION  = 0.0.1
+TARGET   = $$qtLibraryTarget(gear)
 
 GENERATED_DIR = ../../generated/plugin/gear
 # Use common project definitions.
