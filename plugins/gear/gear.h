@@ -47,7 +47,6 @@ private:
 
     QSettings       settings;
 
-    QDoubleSpinBox  *rotateBox {nullptr};
     QSpinBox        *nteethBox {nullptr};
     QDoubleSpinBox  *modulusBox {nullptr};
     QDoubleSpinBox  *pressureBox {nullptr};
@@ -55,6 +54,8 @@ private:
     QDoubleSpinBox  *dedendumBox {nullptr};
     QSpinBox        *n1Box {nullptr}; /* number of points calculated in the dedendum part */
     QSpinBox        *n2Box {nullptr}; /*                    ''              addendum  ''  */
+    QSpinBox        *n3Box {nullptr};
+    QDoubleSpinBox  *rotateBox {nullptr};
     QCheckBox       *drawAllTeethBox {nullptr};
     QCheckBox       *drawBothSidesOfToothBox {nullptr};
     QCheckBox       *useLayersBox {nullptr};
@@ -65,7 +66,6 @@ private:
     QCheckBox       *drawPressureLineBox {nullptr};
     QCheckBox       *drawPressureLimitBox {nullptr};
     QCheckBox       *calcInterferenceBox {nullptr};
-    QSpinBox        *n3Box {nullptr};
 };
 
 class LC_Gear : public QObject, QC_PluginInterface
