@@ -236,11 +236,12 @@ QDockWidget*  LC_WidgetFactory::createBlockListWidget(QG_ActionHandler *actionHa
 
 QDockWidget*  LC_WidgetFactory::createLibraryWidget(QG_ActionHandler *action_handler){
     auto dock = createDockWidget(tr("Library Browser"), "library_dockwidget", tr("Library"));
-
     auto widget = new QG_LibraryWidget(action_handler, dock, "Library");
     widget->setFocusPolicy(Qt::NoFocus);
     dock->setWidget(widget);
-
+    // Library widget size
+    dock->setMinimumSize(200,400);
+    dock->setMaximumSize(800,800);
     // result->resize(240, 400);
 
     connect(widget, &QG_LibraryWidget::escape, m_appWin, &QC_ApplicationWindow::slotFocus);
