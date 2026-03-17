@@ -551,6 +551,8 @@ double LC_Hyperbola::getParamFromPoint(const RS_Vector& p,
          // - Rotate so majorP aligns with positive x-axis
   RS_Vector local = p - data.center;
   local.rotate(-data.majorP.angle());  // inverse rotation
+  if (std::signbit(local.x))
+    return std::numeric_limits<double>::quiet_NaN();
 
   //double x_local = local.x;
   double y_local = local.y;
@@ -1026,7 +1028,7 @@ RS_Vector LC_Hyperbola::getNearestDist(double distance,
     double delta = residual / ds_dphi_current;
     phi += delta;
 
-    LC_LOG<<__func__<<"(): "<<i<<": phi="<<phi<<", "<<s<<"("<<targetArcFromStart<<"): "<<residual;
+    // LC_LOG<<__func__<<"(): "<<i<<": phi="<<phi<<", "<<s<<"("<<targetArcFromStart<<"): "<<residual;
     if (std::abs(delta) < tol) {
       converged = true;
       break;
